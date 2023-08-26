@@ -59,27 +59,18 @@ VALUES ("Condensed milk"),
   ("Pie Crust"),
   ("Cherry Jam"),
   ("Brussels Sprouts"),
-  ("Lemon juice"),
   ("Sesame seeds"),
   ("Pepper"),
-  ("Salt"),
   ("Olive oil"),
   ("Macaroni"),
   ("Butter"),
   ("Flour"),
-  ("Salt "),
-  ("Pepper"),
   ("Milk"),
-  ("Shredded"),
-  ("Cheddar"),
-  ("cheese"),
+  ("Shredded Cheddar cheese"),
   ("Eggs"),
-  ("Soy"),
-  ("sauce"),
+  ("Soy sauce"),
   ("Sugar"),
-  ("Salt"),
-  ("Olive"),
-  ("Oil");
+  ("Salt");
 -- insert into Steps
 INSERT INTO Steps (stepDescription)
 VALUES ("Preheat the oven"),
@@ -100,18 +91,76 @@ VALUES ("Preheat the oven"),
   ("Add some mix to the sauce pan"),
   ("Let is cook for 1'"),
   ("Add oil to a sauce pan"),
-  ("Add some mix to the sauce pan"),
-  ("Let is cook for 1'"),
   ("Remove pan from fire");
 -- insert into recipe
 INSERT INTO Recipe (recipeName)
 VALUES ("Cheesecake"),
+  ("Roasted Brussels Sprouts"),
   ("Mac & Cheese"),
   ("Tamagoyaki Japanese Omelette");
 -- insert into RecipeCategory
-INSERT INTO RecipeCategory ()
-VALUES -- insert into RecipeIngredient
-INSERT INTO RecipeIngredient ()
-VALUES -- insert into RecipeStep
-INSERT INTO RecipeStep ()
-VALUES
+INSERT INTO RecipeCategory (recipe_id, category_id) -- Cheesecake , Cake
+VALUES -- Cheesecake, Cake
+  (1, 1),
+  -- Roasted Brussels Sprouts, vegan
+  (2, 4),
+  -- Mac & Cheese, Vegetarian
+  (3, 3),
+  -- Tamagoyaki Japanese Omelette, Japanese
+  (4, 6);
+-- insert into RecipeIngredient
+INSERT INTO RecipeIngredient (recipe_id, ingredient_id)
+VALUES (1, 1),
+  (1, 2),
+  (1, 3),
+  (1, 4),
+  (1, 5),
+  (2, 6),
+  (2, 3),
+  (2, 7),
+  (2, 8),
+  (2, 9),
+  (3, 10),
+  (3, 11),
+  (3, 12),
+  (3, 18),
+  (3, 8),
+  (3, 13),
+  (3, 14),
+  (4 15),
+  (4, 16),
+  (4, 17),
+  (4, 18),
+  (4, 9);
+-- insert into RecipeStep
+INSERT INTO RecipeStep (recipe_id, step_id, stepOrders)
+VALUES -- Cheesecake Steps
+  (1, 1, 1),
+  (1, 2, 2),
+  (1, 3, 3),
+  (1, 4, 4),
+  (1, 5, 5),
+  (1, 6, 6),
+  (1, 7, 7),
+  -- Roasted Brussels Sprouts Steps
+  (2, 8, 1),
+  (2, 9, 2),
+  (2, 10, 3),
+  (2, 11, 4),
+  -- Mac & Cheese Steps
+  (3, 12, 1),
+  (3, 13, 2),
+  (3, 14, 3),
+  (3, 15, 4),
+  (3, 16, 5),
+  (3, 17, 6),
+  (3, 18, 7),
+  -- Tamagoyaki Japanese Omelette Steps
+  (4, 19, 1),
+  (4, 20, 2),
+  (4, 21, 3),
+  (4, 22, 4),
+  (4, 23, 5),
+  (4, 24, 6),
+  (4, 25, 7),
+  (4, 26, 8);
